@@ -39,8 +39,5 @@ jobs:
                   mkdir -p database
                   touch database/testing.sqlite
 
-            - name: Generate Wayfinder Routes
-              run: php artisan wayfinder:generate --with-form --no-interaction
-
             - name: Run CI Checks
               run: composer ci:check

@@ -112,18 +112,6 @@ RedirectController.options = (
  * @see vendor/laravel/framework/src/Illuminate/Routing/RedirectController.php:19
  * @route '/settings'
  */
-RedirectController.query = (
-    options?: RouteQueryOptions,
-): RouteDefinition<"get"> => ({
-    url: RedirectController.url(options),
-    method: "get",
-});
-
-/**
- * @see \Illuminate\Routing\RedirectController::__invoke
- * @see vendor/laravel/framework/src/Illuminate/Routing/RedirectController.php:19
- * @route '/settings'
- */
 const RedirectControllerForm = (
     options?: RouteQueryOptions,
 ): RouteFormDefinition<"get"> => ({
@@ -252,4 +240,3 @@ RedirectControllerForm.query = (
 
 RedirectController.form = RedirectControllerForm;
 export default RedirectController;
-
