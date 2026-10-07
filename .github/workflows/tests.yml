@@ -31,9 +31,6 @@ jobs:
               with:
                   node-version: "22"
 
-            - name: Install pnpm
-              run: npm install -g pnpm@12.10.1
-
             - name: Setup Application
               run: composer setup
 
