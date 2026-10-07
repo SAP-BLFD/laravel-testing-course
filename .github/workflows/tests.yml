@@ -36,5 +36,10 @@ jobs:
             - name: Setup Application
               run: composer setup
 
+            - name: Create Test Database
+              run: |
+                  mkdir -p database
+                  touch database/testing.sqlite
+
             - name: Run CI Checks
               run: composer ci:check
