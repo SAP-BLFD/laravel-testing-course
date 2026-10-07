@@ -20,15 +20,42 @@ function removeInvalidQueryMethods($dir) {
             $content = file_get_contents($path);
             $original = $content;
 
-            // Remove all lines that have .query = (
-            $content = preg_replace(
-                '/^[A-Za-z0-9]*\.query\s*=\s*\([\s\S]*?\}\);?\n?/m',
-                '',
-                $content
-            );
+            // Split by lines and rebuild without .query methods
+            $lines = explode("\n", $content);
+            $output = [];
+            $skipUntilEnd = false;
+            $braceCount = 0;
 
-            if ($content !== $original) {
-                file_put_contents($path, $content);
+            foreach ($lines as $line) {
+                // Check if this line starts a .query method
+                if (preg_match('/^\s*\w+\.query\s*=\s*\(/', $line)) {
+                    $skipUntilEnd = true;
+                    $braceCount = 0;
+                    // Count braces to know when method ends
+                    $braceCount += substr_count($line, '{') - substr_count($line, '}');
+                    continue;
+                }
+
+                if ($skipUntilEnd) {
+                    // Update brace count
+                    $braceCount += substr_count($line, '{') - substr_count($line, '}');
+
+                    // If we've closed all braces, we're done with this method
+                    if ($braceCount <= 0) {
+                        $skipUntilEnd = false;
+                        // Skip this line and the next empty line
+                        continue;
+                    }
+                    continue;
+                }
+
+                $output[] = $line;
+            }
+
+            $newContent = implode("\n", $output);
+
+            if ($newContent !== $original) {
+                file_put_contents($path, $newContent);
                 echo "Fixed: $path\n";
             }
         }
