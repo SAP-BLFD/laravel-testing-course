@@ -1,9 +1,10 @@
-import { Head, Link, usePage } from '@inertiajs/react';
-import { dashboard, login } from '@/routes';
-import { register } from '@/routes';
+import { Head, Link, usePage } from "@inertiajs/react";
+import type { Auth } from "@/types";
+import { dashboard, login } from "@/routes";
+import { register } from "@/routes";
 
 export default function Welcome() {
-    const { auth } = usePage().props;
+    const { auth } = usePage<{ auth: Auth }>().props;
 
     return (
         <>
