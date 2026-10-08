@@ -3,7 +3,7 @@
 use function Pest\Laravel\get;
 use App\Models\User;
 
-it ('shows the welcome page', function () {
+it('shows the welcome page', function () {
     $response = visit('/');
 
     $response->assertSee('Laravel');
@@ -39,7 +39,7 @@ it('tests that login works', function () {
 
 });
 
-it ('tests that mobile menu works', function () {
+it('tests that mobile menu works', function () {
     $user= User::factory()->create([
         'email' => 'test2@example.com',
         'password' => bcrypt('password123'),
@@ -48,7 +48,7 @@ it ('tests that mobile menu works', function () {
     ]);
 
     visit('/login')
-    ->on ()->mobile()
+    ->on()->mobile()
         ->type('email', $user->email)
         ->type('password', 'password123')
         ->press('Log in')
