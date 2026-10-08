@@ -1,6 +1,5 @@
 <?php
 
-use function Pest\Laravel\get;
 use App\Models\User;
 
 it('shows the welcome page', function () {
@@ -10,21 +9,21 @@ it('shows the welcome page', function () {
 });
 
 it('shows the login page', function () {
-   visit('/login')
-    ->assertSee('Log in')
-    // ->debug()
-    ->assertDontSee('Dashboard');
+    visit('/login')
+        ->assertSee('Log in')
+        // ->debug()
+        ->assertDontSee('Dashboard');
 
     visit('/')
-    ->click('Log in')
-    ->assertSee('Log in')
-    ->assertPathIs('/login');
+        ->click('Log in')
+        ->assertSee('Log in')
+        ->assertPathIs('/login');
 
 });
 
 it('tests that login works', function () {
 
-    $user= User::factory()->create([
+    $user = User::factory()->create([
         'email' => 'test@example.com',
         'password' => bcrypt('password123'),
         'two_factor_secret' => null,
@@ -40,7 +39,7 @@ it('tests that login works', function () {
 });
 
 it('tests that mobile menu works', function () {
-    $user= User::factory()->create([
+    $user = User::factory()->create([
         'email' => 'test2@example.com',
         'password' => bcrypt('password123'),
         'two_factor_secret' => null,
@@ -48,7 +47,7 @@ it('tests that mobile menu works', function () {
     ]);
 
     visit('/login')
-    ->on()->mobile()
+        ->on()->mobile()
         ->type('email', $user->email)
         ->type('password', 'password123')
         ->press('Log in')
