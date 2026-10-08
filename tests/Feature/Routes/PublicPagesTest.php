@@ -12,7 +12,7 @@ it('shows the welcome page', function () {
 it('shows the login page', function () {
    visit('/login')
     ->assertSee('Log in')
-    //->debug()
+    // ->debug()
     ->assertDontSee('Dashboard');
 
     visit('/')
