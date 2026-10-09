@@ -15,6 +15,8 @@ use Illuminate\Support\Carbon;
 use Laravel\Fortify\Contracts\PasskeyUser;
 use Laravel\Fortify\PasskeyAuthenticatable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use App\Models\Post;
+use App\Models\Wine;
 
 /**
  * @property int $id
@@ -38,6 +40,9 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
 
+    /**
+     * @return UserFactory<User>
+     */
     /**
      * Get the attributes that should be cast.
      *
@@ -72,6 +77,16 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     public function posts() : HasMany
     {
         return $this->hasMany(Post::class, 'user_id');
+    }
+
+    /**
+     * Holt die Weine die dem User gehören
+     *
+     * @return HasMany<Wine, $this>
+     */
+    public function wines() : HasMany
+    {
+        return $this->hasMany(Wine::class, 'user_id');
     }
 }
 
