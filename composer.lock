@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5bc3329eefda4ff2988aa7e2867461c",
+    "content-hash": "f8441f3d19d81c8bf114e8757dd00e96",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -10810,38 +10810,38 @@
         },
         {
             "name": "pestphp/pest-plugin-browser",
-            "version": "v5.1.2",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest-plugin-browser.git",
-                "reference": "3425026b6563ca936cbdfabb9ac979355fab74c1"
+                "reference": "cfe0fc085c2d1ea33d9dec6e014c486ba3e2f525"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin-browser/zipball/3425026b6563ca936cbdfabb9ac979355fab74c1",
-                "reference": "3425026b6563ca936cbdfabb9ac979355fab74c1",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin-browser/zipball/cfe0fc085c2d1ea33d9dec6e014c486ba3e2f525",
+                "reference": "cfe0fc085c2d1ea33d9dec6e014c486ba3e2f525",
                 "shasum": ""
             },
             "require": {
-                "amphp/amp": "^3.1.3",
+                "amphp/amp": "^3.1.2",
                 "amphp/http-server": "^3.4.6",
                 "amphp/websocket-client": "^2.0.2",
                 "ext-sockets": "*",
-                "pestphp/pest": "^5.2.1",
+                "pestphp/pest": "^5.0.0",
                 "pestphp/pest-plugin": "^5.0.0",
                 "php": "^8.4",
-                "symfony/process": "^8.1.7"
+                "symfony/process": "^8.1.0"
             },
             "conflict": {
                 "pestphp/pest": "<5.0.0"
             },
             "require-dev": {
-                "livewire/livewire": "^4.4.7",
+                "livewire/livewire": "^4.3.3",
                 "nunomaduro/collision": "^8.9.5",
-                "orchestra/testbench": "^11.3",
+                "orchestra/testbench": "^11.1",
                 "pestphp/pest-dev-tools": "^5.0.0",
-                "pestphp/pest-plugin-laravel": "^5.0.1",
-                "pestphp/pest-plugin-type-coverage": "^5.0.2"
+                "pestphp/pest-plugin-laravel": "^5.0.0",
+                "pestphp/pest-plugin-type-coverage": "^5.0.0"
             },
             "type": "library",
             "extra": {
@@ -10874,7 +10874,7 @@
                 "unit"
             ],
             "support": {
-                "source": "https://github.com/pestphp/pest-plugin-browser/tree/v5.1.2"
+                "source": "https://github.com/pestphp/pest-plugin-browser/tree/v5.0.0"
             },
             "funding": [
                 {
@@ -10890,7 +10890,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-10-02T10:52:14+00:00"
+            "time": "2026-07-21T07:48:55+00:00"
         },
         {
             "name": "pestphp/pest-plugin-laravel",
