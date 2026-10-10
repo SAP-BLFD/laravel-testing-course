@@ -20,7 +20,7 @@ class WineFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'colour' => $this->faker->word(),
+            'color' => $this->faker->randomElement(['red', 'white']),
             'user_id' => User::factory(),
         ];
     }

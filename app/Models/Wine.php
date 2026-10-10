@@ -22,7 +22,7 @@ class Wine extends Model
 
     protected $fillable = [
         'name',
-        'colour',
+        'color',
         'user_id',
     ];
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('wines', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('colour');
+            $table->string('color');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
